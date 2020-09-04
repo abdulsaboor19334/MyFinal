@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default"
+    data-auto-logout-link="false"
+    scope="
+    public_profile,email,
+    user_likes,
+    user_posts, 
+    pages_show_list,
+    pages_read_engagement, 
+    pages_manage_posts, 
+    public_profile"
+    onlogin="checkLoginState();" data-use-continue-as="false" data-width=""></div>
+
+{% endblock content %}

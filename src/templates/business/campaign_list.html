@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block content %}
+<div class="card p-3">
+  <div class="row">
+    <div class="col-8">
+      <div class="card-body">
+        <h2
+          style="
+            margin: 0;
+            font-weight: 100;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+          "
+        >
+          Campaign Name
+          <span
+            class="badge badge-danger"
+            style="font-size: 22px; font-weight: 100;"
+          >
+            Unpaid
+          </span>
+        </h2>
+        <p class="mt-2">by Company Name</p>
+        <hr />
+        <p style="font-size: large;">
+          Budget:
+          <span
+            class="badge badge-success"
+            style="font-size: 15px; font-weight: 100;"
+          >
+            450,000 Rs
+          </span>
+        </p>
+        <p>Budget distribution by platform</p>
+        <div class="progress" style="height:20px;">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 30%; background-color: #3b5998;"
+            aria-valuenow="30"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            Facebook
+          </div>
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 30%; background-color: #dd2a7b;"
+            aria-valuenow="30"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            Instagram
+          </div>
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 40%; background-color: #00acee;"
+            aria-valuenow="40"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            Twitter
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4" style="text-align: right;">
+      <h2 class="display-1" style="margin: 15px; line-height: 40px; font-weight:900;">
+        <span style="font-weight: 100; font-size: 20px;">
+          Potential Reach <br />
+        </span>
+        4.3 Million
+      </h2>
+      <p style="margin: 15px;">Based on budget and platforms selected.</p>
+      <button
+        class="btn btn-block btn-primary p-3"
+        style="font-size: 25px; font-weight: 100; position:absolute; right:5%; bottom:5%; background: linear-gradient(to right, #5e72e4,#8965e0)"
+      >
+        Detail
+      </button>
+    </div>
+  </div>
+</div>
+<div class="p-1">
+  {% include 'asset/card_stats.html' %}
+
+</div>
+{% endblock content %}

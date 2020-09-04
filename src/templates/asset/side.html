@@ -1,0 +1,83 @@
+  {% load static %}
+  
+  <!-- Sidenav -->
+  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header align-items-center">
+        <a class="navbar-brand" href="javascript:void(0)">
+          <img src="{% static 'img/brand/meme-marketing transparent logo.png' %}" style="max-height:80px; height:80; padding-bottom:10%;" alt="...">
+        </a>
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <!-- Nav items -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <i class="ni ni-tv-2 text-primary"></i>
+                <span class="nav-link-text">Dashboard</span>
+              </a>
+            </li>
+            {% if request.user.is_business %}           
+            <li class="nav-item hover-effect">
+              <a class="nav-link" href="{% url 'influencer:create-campaign' %}">
+                <i class="ni ni-button-play text-primary"></i>
+                <span class="nav-link-text">Create Campaign</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if request.user.is_business %} 
+            <li class="nav-item hover-effect">
+              <a class="nav-link" href="{% url 'influencer:campaign-list' %}">
+                <i class="ni ni-bullet-list-67 text-primary"></i>
+                <span class="nav-link-text">Campaigns List (Business)</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if request.user.is_influencer %} 
+            <li class="nav-item hover-effect">
+              <a class="nav-link" href="{% url 'influencer:assignments-list' %}">
+                <i class="ni ni-bullet-list-67 text-primary"></i>
+                <span class="nav-link-text">Campaigns List (Influencer)</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if request.user.is_business %} 
+            <li class="nav-item hover-effect">
+              <a class="nav-link" href="{% url 'influencer:campaign-detail' %}">
+                <i class="ni ni-bullet-list-67 text-primary"></i>
+                <span class="nav-link-text">Campaigns Detail (Business)</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if request.user.is_memer %} 
+            <li class="nav-item hover-effect">
+              <a class="nav-link" href="{% url 'influencer:memer-list' %}">
+                <i class="ni ni-bullet-list-67 text-primary"></i>
+                <span class="nav-link-text">Campaigns List (Memer)</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if request.user.is_memer %} 
+            <li class="nav-item hover-effect">
+              <a class="nav-link" href="{% url 'influencer:memer-detail' %}">
+                <i class="ni ni-bullet-list-67 text-primary"></i>
+                <span class="nav-link-text">memer-detail</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if request.user.is_memer %} 
+            <li class="nav-item hover-effect">
+              <a class="nav-link" href="{% url 'influencer:memer-dashboard' %}">
+                <i class="ni ni-bullet-list-67 text-primary"></i>
+                <span class="nav-link-text">memer-dashboard</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
